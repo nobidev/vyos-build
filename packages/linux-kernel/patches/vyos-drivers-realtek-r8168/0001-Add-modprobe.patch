@@ -1,0 +1,24 @@
+From bd861052d62cce6c64f2d5f6f18442b0fd3eedc6 Mon Sep 17 00:00:00 2001
+From: Nobi <nobi@nobidev.com>
+Date: Thu, 14 Mar 2024 08:23:09 +0000
+Subject: [PATCH] Add modprobe
+
+---
+ modprobe-r8168.conf | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/modprobe-r8168.conf b/modprobe-r8168.conf
+index e69de29..fa1e039 100644
+--- a/modprobe-r8168.conf
++++ b/modprobe-r8168.conf
+@@ -0,0 +1,7 @@
++# map the specific PCI IDs instead of blacklisting the whole r8169 module
++alias	pci:v00001186d00004300sv00001186sd00004B10bc*sc*i*	r8168
++alias	pci:v000010ECd00008168sv*sd*bc*sc*i*			r8168
++
++# if the aliases above do not work, uncomment the following line
++# to blacklist the whole r8169 module
++#blacklist r8169
+-- 
+2.25.1
+
